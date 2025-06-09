@@ -124,3 +124,22 @@ function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const btnLogout = document.getElementById("logout");
+
+    if (btnLogout) {
+        btnLogout.addEventListener("click", () => {
+            // Confirmación opcional
+            if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+                // Elimina datos de sesión
+                localStorage.removeItem("auth");
+
+
+                // Redirige al login
+                window.location.href = "login.html";
+            }
+        });
+    } else {
+        console.warn("Botón de logout no encontrado.");
+    }
+});

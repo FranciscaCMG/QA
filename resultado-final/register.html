@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro - CarpiShop</title>
   <link rel="stylesheet" href="./css/auth.css" />
 </head>
+
 <body>
   <main class="auth-container">
+        <a href="home.html">
+      <img src="./img/logo/logo.png" alt="CarpiShop Logo" class="auth-logo" />
+    </a>
     <h2>Crear cuenta</h2>
     <form id="registerForm">
       <input type="email" id="email" placeholder="Correo electrónico" required />
@@ -18,7 +23,7 @@
   </main>
 
   <script>
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
       const email = document.getElementById("email").value;
@@ -29,21 +34,22 @@
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
       })
-      .then(res => {
-        if (res.status === 201) {
-          alert("✅ Registro exitoso. Redirigiendo al login...");
-          window.location.href = "login.html";
-        } else if (res.status === 409) {
-          alert("⚠️ El usuario ya está registrado.");
-        } else {
-          alert("❌ Error al registrar.");
-        }
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        alert("Error de conexión.");
-      });
+        .then(res => {
+          if (res.status === 201) {
+            alert("✅ Registro exitoso. Redirigiendo al login...");
+            window.location.href = "login.html";
+          } else if (res.status === 409) {
+            alert("⚠️ El usuario ya está registrado.");
+          } else {
+            alert("❌ Error al registrar.");
+          }
+        })
+        .catch(err => {
+          console.error("Error:", err);
+          alert("Error de conexión.");
+        });
     });
   </script>
 </body>
+
 </html>

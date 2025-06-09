@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - CarpiShop</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <main style="padding: 2rem; max-width: 400px; margin: auto;">
+    <h2>Crear cuenta</h2>
+    <form id="registerForm">
+      <input type="email" id="email" placeholder="Correo electrónico" required style="width: 100%; margin-bottom: 10px;">
+      <input type="password" id="password" placeholder="Contraseña" required style="width: 100%; margin-bottom: 10px;">
+      <button type="submit" style="width: 100%;">Registrarse</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      fetch("http://localhost:3001/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      })
+      .then(res => {
+        if (res.status === 201) {
+          alert("✅ Registro exitoso. Redirigiendo al login...");
+          window.location.href = "login.html";
+        } else if (res.status === 409) {
+          alert("⚠️ El usuario ya está registrado.");
+        } else {
+          alert("❌ Error al registrar.");
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Error de conexión.");
+      });
+    });
+  </script>
+</body>
+</html>

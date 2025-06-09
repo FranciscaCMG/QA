@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a CarpiShop</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .bienvenida {
+      max-width: 400px;
+      padding: 2rem;
+      background-color: #f8f8f8;
+      border-radius: 10px;
+    }
+    .bienvenida h1 {
+      margin-bottom: 1rem;
+    }
+    .bienvenida button {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-login {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-register {
+      background-color: #28a745;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="bienvenida">
+    <h1>Bienvenido a CarpiShop</h1>
+    <p>Por favor, inicia sesión o regístrate para continuar.</p>
+    <div>
+      <button onclick="location.href='login.html'" class="btn-login">Iniciar sesión</button>
+      <button onclick="location.href='register.html'" class="btn-register">Registrarse</button>
+    </div>
+  </div>
+</body>
+</html>

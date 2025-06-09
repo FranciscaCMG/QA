@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 // Redirige al login
-                window.location.href = "login.html";
+                window.location.href = "home.html";
             }
         });
     } else {

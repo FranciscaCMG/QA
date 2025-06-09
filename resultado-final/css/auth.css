@@ -81,6 +81,7 @@ body {
   transition: transform 0.2s ease;
 }
 
+
 .auth-logo:hover {
   transform: scale(1.05);
 }

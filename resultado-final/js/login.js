@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem("auth", "true"); // <- Aquí
-          alert("✅ Login exitoso. Redirigiendo...");
+          alert("✅ Login exitoso. Redirigiendo... hols");
           window.location.href = "index.html";
         } else {
           alert("❌ Credenciales incorrectas");

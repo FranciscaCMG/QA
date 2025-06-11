@@ -83,31 +83,33 @@ if (productosEnCarritoLS) {
 }
 
 function agregarAlCarrito(e) {
-
     Toastify({
         text: "Producto agregado",
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
         style: {
-          background: "linear-gradient(to right, #4b33a8, #785ce9)",
-          borderRadius: "2rem",
-          textTransform: "uppercase",
-          fontSize: ".75rem"
+            background: "linear-gradient(to right, #4b33a8, #785ce9)",
+            borderRadius: "2rem",
+            textTransform: "uppercase",
+            fontSize: ".75rem",
+            cursor: "pointer"  // Opcional: mejora la UX visual al pasar el mouse
         },
         offset: {
-            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
-          },
-        onClick: function(){} // Callback after click
-      }).showToast();
+            x: '1.5rem',
+            y: '1.5rem'
+        },
+        onClick: function () {
+            window.location.href = "carrito.html";  // Redirige al carrito
+        }
+    }).showToast();
 
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
-    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+    if (productosEnCarrito.some(producto => producto.id === idBoton)) {
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
         productosEnCarrito[index].cantidad++;
     } else {
@@ -116,9 +118,9 @@ function agregarAlCarrito(e) {
     }
 
     actualizarNumerito();
-
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
+
 
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
@@ -129,15 +131,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btnLogout) {
         btnLogout.addEventListener("click", () => {
-            // Confirmación opcional
-            if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
-                // Elimina datos de sesión
-                localStorage.removeItem("auth");
-
-
-                // Redirige al login
-                window.location.href = "home.html";
-            }
+            Swal.fire({
+                title: '¿Cerrar sesión?',
+                text: 'Tu sesión se cerrará y volverás a la página principal.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, cerrar sesión',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.removeItem("auth");
+                    window.location.href = "home.html";
+                }
+            });
         });
     } else {
         console.warn("Botón de logout no encontrado.");

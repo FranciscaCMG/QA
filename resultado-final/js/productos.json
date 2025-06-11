@@ -7,7 +7,7 @@
             "nombre": "Abrigos",
             "id": "abrigos"
         },
-        "precio": 1000
+        "precio": 25990
     },
     {
         "id": "abrigo-02",
@@ -17,7 +17,7 @@
             "nombre": "Abrigos",
             "id": "abrigos"
         },
-        "precio": 1000
+        "precio": 27990
     },
     {
         "id": "abrigo-03",
@@ -27,7 +27,7 @@
             "nombre": "Abrigos",
             "id": "abrigos"
         },
-        "precio": 1000
+        "precio": 15990
     },
     {
         "id": "abrigo-04",
@@ -37,7 +37,7 @@
             "nombre": "Abrigos",
             "id": "abrigos"
         },
-        "precio": 1000
+        "precio": 42950
     },
     {
         "id": "abrigo-05",
@@ -47,7 +47,7 @@
             "nombre": "Abrigos",
             "id": "abrigos"
         },
-        "precio": 1000
+        "precio": 36990
     },
     {
         "id": "camiseta-01",
@@ -57,7 +57,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 1000
+        "precio": 21990
     },
     {
         "id": "camiseta-02",
@@ -67,7 +67,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 1000
+        "precio": 9990
     },
     {
         "id": "camiseta-03",
@@ -77,7 +77,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 1000
+        "precio": 16990
     },
     {
         "id": "camiseta-04",
@@ -87,7 +87,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 1000
+        "precio": 12990
     },
     {
         "id": "camiseta-05",
@@ -97,7 +97,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 1000
+        "precio": 17990
     },
     {
         "id": "camiseta-06",
@@ -107,7 +107,7 @@
             "nombre": "Camisetas",
             "id": "camisetas"
         },
-        "precio": 1000
+        "precio": 14990
     },
     {
         "id": "camiseta-07",

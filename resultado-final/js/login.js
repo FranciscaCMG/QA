@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
           msgDiv.style.display = "block";
           msgDiv.style.color = "red";
 
-          document.getElementById("password").value = ""; // limpia la contraseña
+          document.getElementById("password").value = "";
+          document.getElementById("email").value=""; 
 
           setTimeout(() => {
             msgDiv.style.display = "none";

@@ -9,14 +9,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
+        const msgDiv = document.getElementById("loginMessage");
 
         const user = data.find((u) => u.email === email && u.password === password);
+
         if (user) {
           localStorage.setItem("auth", "true");
-          alert("✅ Login exitoso. Redirigiendo...");
-          window.location.href = "index.html";
+
+          msgDiv.textContent = "✅ Login exitoso. Redirigiendo...";
+          msgDiv.style.display = "block";
+          msgDiv.style.color = "green";
+
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1500);
         } else {
-          alert("❌ Credenciales incorrectas");
+          msgDiv.textContent = "❌ Credenciales incorrectas";
+          msgDiv.style.display = "block";
+          msgDiv.style.color = "red";
+
+          document.getElementById("password").value = ""; // limpia la contraseña
+
+          setTimeout(() => {
+            msgDiv.style.display = "none";
+          }, 3000);
         }
       });
     })

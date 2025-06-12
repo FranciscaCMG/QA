@@ -153,6 +153,15 @@ main {
     border-radius: 1rem;
 }
 
+.producto { position: relative; }
+.heart-container {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
 .producto-detalles {
     background-color: var(--clr-main);
     color: var(--clr-white);
